@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-screen {
+  position: relative;
+}
+.login-screen:after {
+  content: '';
+  position: absolute;
+  background: url(../../public/login-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+}
+
+#remember {
+  display: none;
+}
+label {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+/* Create a custom checkbox */
+.custom-checkbox {
+  display: inline-block;
+  width: 17px; /* Width of the checkbox */
+  height: 17px; /* Height of the checkbox */
+  background-color: #224957; /* Background color when unchecked */
+  border: 2px solid #224957; /* Border color */
+  border-radius: 4px; /* Optional: round corners */
+  cursor: pointer; /* Pointer on hover */
+}
+
+/* Change background when checked */
+#remember:checked + .custom-checkbox {
+  background-color: #fff; /* Background color when checked */
+}
+
+/* Optional: styling for the checkmark */
+#remember:checked + .custom-checkbox::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: teal; /* Color of the checkmark */
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
